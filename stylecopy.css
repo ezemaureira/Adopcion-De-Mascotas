@@ -1,0 +1,250 @@
+
+/* fuente de google
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 700
+*/
+.dynapuff-unique-class {
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Cambia el peso según sea necesario */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+
+/* General Styles */
+body {
+    font-family: 'DynaPuff', sans-serif;
+    background-color: #f8f0e3; /* Fondo en tono pastel claro */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/* Header */
+header {
+    background-color: #ffe1a8; /* Tono pastel naranja claro */
+    text-align: center;
+    padding: 20px;
+    border-bottom: 5px solid #f3a683;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #6a0572; /* Púrpura suave */
+    margin: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff6b6b; /* Rosa pastel */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ff8787; /* Un poco más oscuro al pasar el cursor */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Mascotas Section */
+section#Mascotas {
+    background-color: #c8e6c9; /* Verde pastel claro */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+section#Mascotas h2 {
+    text-align: center;
+    color: #388e3c; /* Verde más intenso */
+    font-size: 2em;
+}
+
+article {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #b2dfdb; /* Bordes suaves */
+}
+
+article h3 {
+    color: #00796b; /* Verde oscuro */
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: solid, line-through;
+}
+
+article img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+}
+
+article p {
+    font-size: 1.1em;
+    color: #555;
+}
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Ajustar al tamaño de las imágenes */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-image:first-child {
+    display: block;
+}
+video, img {
+    display: none;
+}
+video:first-child, img:first-child {
+    display: block;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contacto Section */
+section#Contacto {
+    background-color: #ffccbc; /* Naranja pastel claro */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+section#Contacto h2 {
+    color: #d84315; /* Naranja oscuro */
+    font-size: 2em;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 80%;
+}
+.form-group label{
+    width: 30%;
+    margin-right: 10px;
+}
+.form-group input, .form-group textarea {
+    
+        width: 70%; /* Ajusta según sea necesario */
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        background-color: #fff3e0; /* Fondo en tono naranja claro */
+}
+/*
+label {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    background-color: #fff3e0; /* Fondo en tono naranja claro 
+} */
+
+button {
+    padding: 10px 20px;
+    background-color: #ffab91; /* Naranja pastel */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff7043; /* Naranja más intenso */
+}
+
+/* Nosotros Section */
+section#Nosotros {
+    background-color: #b3e5fc; /* Azul pastel claro */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+section#Nosotros h2 {
+    color: #0288d1; /* Azul más oscuro */
+    text-align: center;
+    font-size: 2em;
+}
+
+section#Nosotros p {
+    font-size: 1.2em;
+    color: #444;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 5px solid #81d4fa; /* Azul suave */
+}
