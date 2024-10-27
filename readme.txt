@@ -26,7 +26,7 @@ cuerpo
 		nombre del animal 
 		fotos
 		descripción
-	sección de contacto (para contactarse ne caso de estar interesados en una mascota o alguna duda)
+	sección de contacto (para contactarseme caso de estar interesados en una mascota o alguna duda)
 		formulario de contacto
 	sección nosotros (asi la gente conoce mas sobre lo que hacemos y a que nos dedicamos )
 Pie de Página
