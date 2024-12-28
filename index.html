@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopcion de mascotas</title>
+    <title>Adopción de Mascotas</title>
     <link rel="stylesheet" href="stylecopy.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
@@ -14,56 +14,38 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=pets" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=sound_detection_dog_barking" />
-
-
 </head>
 
 <body>
     <header>
         <nav>
+            <a>
+                <img src="img/huellas_gato.png" alt="Logo" width="30" height="24">
+                Patitas en la calle
+            </a>
+            <h1>Adopta un compañero <span class="material-symbols-outlined">pets</span></h1>
             <ul>
-                <li><a href=#Mascotas>Mascotas<span class="material-symbols-outlined">
-                            sound_detection_dog_barking
-                        </span> </a></li>
-                <li><a href=#Contacto>Contacto</a></li>
-                <li><a href=#Nosotros>Nosotros</a></li>
+                <li><a href="#Mascotas">Mascotas <span class="material-symbols-outlined">sound_detection_dog_barking</span></a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+                <li><a href="#Nosotros">Nosotros</a></li>
             </ul>
         </nav>
-        <h1>Adopta un compañero <span class="material-symbols-outlined">
-                pets
-            </span></h1>
     </header>
+
     <main>
         <section id="Mascotas">
             <h2>Álbum De Mascotas</h2>
-
-            <!-- Carrusel de Peluche -->
-            <article>
-                <h3>Peluche</h3>
-                <div class="carousel" id="peluche-carousel">
-                    <img class="carousel-image" src="img/Peluche.jpeg" alt="Foto de Peluche 1">
-                    <video width="320" height="240" controls src="img/Peluche.mp4"></video>
-                    <button class="carousel-prev" onclick="prevSlide('peluche-carousel')">&#10094;</button>
-                    <button class="carousel-next" onclick="nextSlide('peluche-carousel')">&#10095;</button>
+            <div class="carousel">
+                <div class="carousel-images" id="carouselImages"></div>
+                <div class="carousel-controls">
+                    <button onclick="prevImage()">Previous</button>
+                    <button onclick="nextImage()">Next</button>
                 </div>
-                <p>Peluche, un perro de raza pequeña de aprox 4 meses, desparasitado, sin vacunas.</p>
-            </article>
-
-            <!-- Carrusel de Negrita -->
-            <article>
-                <h3>Negrita</h3>
-                <div class="carousel" id="negrita-carousel">
-                    <img class="carousel-image" src="img/Negrita1.jpg" alt="Foto de Negrita 1">
-                    <img class="carousel-image" src="img/Negrita2.jpg" alt="Foto de Negrita 2">
-                    <button class="carousel-prev" onclick="prevSlide('negrita-carousel')">&#10094;</button>
-                    <button class="carousel-next" onclick="nextSlide('negrita-carousel')">&#10095;</button>
-                </div>
-                <p>Negrita, una perra de raza grande de 2 meses.</p>
-            </article>
+            </div>
         </section>
+
         <section id="Contacto">
             <h2>Contacto</h2>
-
             <form action="https://formspree.io/f/movqvrgr" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
@@ -79,17 +61,16 @@
                 </div>
                 <button type="submit">Enviar</button>
             </form>
-
         </section>
+
         <section id="Nosotros">
             <h2>Sobre Nosotros</h2>
-            <p>Somos una pequeña ong sin fines de lucro radicada en Mendoza Argentina dedicada al rescate y proteccion
-                de animales en situcaion de calle</p>
+            <p>Somos una pequeña ONG sin fines de lucro radicada en Mendoza, Argentina, dedicada al rescate y protección de animales en situación de calle.</p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Patitas en la calle</p>
-
     </footer>
 </body>
 

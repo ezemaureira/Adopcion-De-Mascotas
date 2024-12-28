@@ -1,29 +1,71 @@
-function nextSlide(carouselId) {
-    const carousel = document.getElementById(carouselId);
-    const media = carousel.querySelectorAll('.carousel-image, video');
-    let currentIndex;
-    for (let i = 0; i < media.length; i++) {
-        if (media[i].style.display === 'block') {
-            currentIndex = i;
-            media[i].style.display = 'none';
-            break;
+const carouselImages = document.getElementById("carouselImages");
+const apiUrl = "https://dog.ceo/api/breeds/image/random";
+let images = [];
+let currentIndex = 0;
+const nombreMascota = [
+    "Roco", "Luna", "Toby", "Max", "Lobo", "Zeus", "Nala", 
+    "Lola", "Simba", "Rocky", "Coco", "Mia", "Kira", "Thor", "Bruno", "Maya"
+];
+
+async function fetchDogImage() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        if (data.status === "success") {
+            addImageToCarousel(data.message);
+        } else {
+            console.error("Error:", data);
         }
+    } catch (error) {
+        console.error("Error en la imagen:", error);
     }
-    const nextIndex = (currentIndex + 1) % media.length;
-    media[nextIndex].style.display = 'block';
 }
 
-    function prevSlide(carouselId) {
-        const carousel = document.getElementById(carouselId);
-        const media = carousel.querySelectorAll('.carousel-image, video');
-        let currentIndex;
-        for (let i = 0; i < media.length; i++) {
-            if (media[i].style.display === 'block') {
-                currentIndex = i;
-                media[i].style.display = 'none';
-                break;
-            }
-        }
-        const prevIndex = (currentIndex - 1 + media.length) % media.length;
-        media[prevIndex].style.display = 'block';
+function addImageToCarousel(imageUrl) {
+    images.push(imageUrl);
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "img-container";
+
+    const nameElement = document.createElement("p");
+    nameElement.innerText = getRandomName();
+    imgContainer.appendChild(nameElement);
+
+    const imgElement = document.createElement("img");
+    imgElement.src = imageUrl;
+    imgElement.alt = "perro";
+    imgElement.className = "carousel-img";
+    imgContainer.appendChild(imgElement);
+
+    carouselImages.appendChild(imgContainer);
+
+    if (images.length === 1) {
+        updateCarousel();
     }
+}
+
+function getRandomName() {
+    const randomIndex = Math.floor(Math.random() * nombreMascota.length);
+    return nombreMascota[randomIndex];
+}
+
+function updateCarousel() {
+    const imageElements = document.querySelectorAll(".carousel-images .img-container");
+    imageElements.forEach((img, index) => {
+        img.style.display = index === currentIndex ? "block" : "none";
+    });
+}
+
+function prevImage() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    updateCarousel();
+}
+
+function nextImage() {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    updateCarousel();
+}
+
+// Cargar imágenes iniciales
+for (let i = 0; i < 5; i++) {
+    fetchDogImage();
+}
